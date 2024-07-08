@@ -1,1 +1,1 @@
-# typing-speed-website
+# typing-speed

@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+import { ThemeProvider } from "styled-components";
+import Footer from "./Components/Footer";
+import TypingBox from "./Components/TypingBox";
+import { useTheme } from "./Context/ThemeContext";
+import { GlobalStyles } from "./Styles/global";
+import { auth } from "./backendConfig";
+import Header from "./Components/Header";
+import { Route, Routes } from "react-router-dom";
+import HomePage from "./Pages/HomePage";
+import UserPage from "./Pages/UserPage";
+import Alert from "./Components/Alert";
+import ComparePage from "./Pages/ComparePage";
 
 function App() {
+
+  const {theme} = useTheme();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <GlobalStyles/>
+      <Alert/>
+      <Routes>
+        <Route path='/' element={<HomePage/>}   />
+        <Route path='/user' element={<UserPage/>} />
+        <Route path='/compare/:username' element={<ComparePage/>} />
+      </Routes>
+    </ThemeProvider>
   );
 }
 

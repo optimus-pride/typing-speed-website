@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import userRoutes from './routes/userRoutes.js';
+import connectDB from './backendconfig.js';
 
 dotenv.config();
 
@@ -10,6 +11,8 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+connectDB();
 
 mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,

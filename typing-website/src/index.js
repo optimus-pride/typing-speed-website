@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
-import { TestModeContextProvider } from './Context/TestModeContext';
-import { ThemeContextProvider } from './Context/ThemeContext';
+import App from './App.js';
+import { TestModeContextProvider } from './Context/TestModeContext.jsx';
+import { ThemeContextProvider } from './Context/ThemeContext.jsx';
 import { BrowserRouter } from 'react-router-dom';
-import { AlertContextProvider } from './Context/AlertContext';
+import { AlertContextProvider } from './Context/AlertContext.jsx';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

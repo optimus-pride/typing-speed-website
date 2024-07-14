@@ -1,7 +1,20 @@
 import React, { useEffect } from 'react'
-import { useAlert } from '../Context/AlertContext';
+import { useAlert } from '../Context/AlertContext.jsx';
+import Graph from './Graph.jsx'
 
-const Stats = ({wpm, resetTest, accuracy, correctChars, incorrectChars, missedChars, extraChars}) => {
+const Stats = ({wpm, resetTest, accuracy, correctChars, incorrectChars, missedChars, extraChars,graphData}) => {
+    // console.log(graphData);
+    // arr= [1,1,2,3,2,2,2,3,3,3,3,4,4,4], set(arr) = [1,2,3,4]
+    var timeSet = new Set();  //store unique values of time
+    // has(value) -> true or false , constant time
+    // add(value) -> adds the value in set
+    const {setAlert} = useAlert();
+    const newGraph = graphData.filter((i)=>{
+        if(!timeSet.has(i[0])){
+            timeSet.add(i[0]);
+            return i;
+        }
+    });
     return (
         <div className="stats-box">
             <div className="left-stats">
@@ -15,6 +28,7 @@ const Stats = ({wpm, resetTest, accuracy, correctChars, incorrectChars, missedCh
             </div>
             <div className="right-stats">
                 {/* graph comp will go here */}
+                <Graph graphData={newGraph}/>
             </div>
         </div>
     )

@@ -137,6 +137,16 @@ body::-webkit-scrollbar{
     color: ${({theme})=>theme.title};
 }
 
+.header{
+    display: flex;
+    width: 1000px;
+    align-self: stretch;
+    margin-left: auto;
+    margin-right: auto;
+    height: 80px;
+    justify-content: space-between;
+}
+
 a{
     text-decoration: none;
     color: inherit;

@@ -6,7 +6,7 @@ import { useTheme } from "../Context/ThemeContext";
 import { GlobalStyles } from "../Styles/global";
 import Header from "../Components/Header";
 
-var randomWords =  require('random-words');
+import { generate as randomWords } from 'random-words';
 
 const HomePage = () => {
   

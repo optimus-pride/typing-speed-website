@@ -11,7 +11,7 @@ import React, {
 import { useTestMode } from "../Context/TestModeContext";
 import Stats from "./Stats";
 import UpperMenu from "./UpperMenu";
-var randomWords = require("random-words");
+import { generate as randomWords } from 'random-words';
 
 const TypingBox = () => {
   // in react you get a hook , useRef()

@@ -1,4 +1,4 @@
-import { Dialog, DialogTitle } from "@material-ui/core";
+import { Dialog, DialogTitle } from '@mui/material';
 import { wordsList } from "random-words";
 import React, {
   createRef,

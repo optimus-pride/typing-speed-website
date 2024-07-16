@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Alert, AppBar, Box, Modal, Tab, Tabs } from '@mui/material';
-import { makeStyles } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
 import LoginForm from './LoginForm';
 import SignupForm from './SignupForm';
 import GoogleButton from 'react-google-button';

@@ -30,8 +30,8 @@ mongoose.connect(MONGO_URI, {
 
 // Passport Config
 passport.use(new GoogleStrategy({
-    clientID: 'your-google-client-id',
-    clientSecret: 'your-google-client-secret',
+    clientID: '1099440537864-mr3o7l3kqktps6gtkodl19s52tg2pt7b.apps.googleusercontent.com',
+    clientSecret: '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',
     callbackURL: '/auth/google/callback'
    }, async (token, tokenSecret, profile, done) => {
     try {
